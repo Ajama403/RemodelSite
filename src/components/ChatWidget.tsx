@@ -8,7 +8,7 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: `Hi! I'm with ${site.businessName}. 👋 Need flooring, handyman repairs, plumbing, or electrical help in ${site.baseCity}? Call or text ${site.phoneDisplay} and I'll get you scheduled.`,
+      content: `Hi! I'm with ${site.businessName}. Need ${site.services.map((s) => s.title.toLowerCase()).join(", ")} in ${site.baseCity}? Call or text ${site.phoneDisplay} and I'll get you scheduled.`,
     },
   ]);
   const [input, setInput] = useState("");
@@ -18,32 +18,51 @@ const ChatWidget = () => {
 
     const userMessage = { role: "user", content: input };
     setMessages((prev) => [...prev, userMessage]);
+    const userText = input.toLowerCase();
     setInput("");
 
-    // Simulated response for demo
     setTimeout(() => {
-      const responses = [
-        `We handle ${site.services[0].title.toLowerCase()} and ${site.services[2].title.toLowerCase()} with fast response. Want me to set a time?`,
-        `${site.accreditationLabel} serving ${site.serviceAreas.join(", ")}. Tell me what you need and where you are.`,
-        `We're ${site.hours.toLowerCase()}—call or text ${site.phoneDisplay} and I'll have Michail follow up.`,
-      ];
-      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-      setMessages((prev) => [...prev, { role: "assistant", content: randomResponse }]);
+      let response: string;
+
+      if (userText.includes("service") || userText.includes("what do you")) {
+        const serviceList = site.services.map((s) => s.title).join(", ");
+        response = `We offer: ${serviceList}. Want to schedule any of these? Call or text ${site.phoneDisplay}.`;
+      } else if (userText.includes("area") || userText.includes("where") || userText.includes("location")) {
+        response = `We serve ${site.serviceAreas.join(", ")} and surrounding neighborhoods. Are you in one of these areas?`;
+      } else if (userText.includes("price") || userText.includes("cost") || userText.includes("estimate") || userText.includes("quote")) {
+        response = `We provide free estimates! Call or text ${site.phoneDisplay} with project details and we'll give you a clear quote.`;
+      } else {
+        const responses = [
+          `We handle ${site.services[0].title.toLowerCase()} and ${site.services[2].title.toLowerCase()} with fast response. Want me to set a time?`,
+          `${site.accreditationLabel} serving ${site.serviceAreas.join(", ")}. Tell me what you need and where you are.`,
+          `We're available with ${site.hours.toLowerCase()} — call or text ${site.phoneDisplay} and we'll follow up right away.`,
+        ];
+        response = responses[Math.floor(Math.random() * responses.length)];
+      }
+      setMessages((prev) => [...prev, { role: "assistant", content: response }]);
     }, 1000);
   };
 
   return (
     <>
-      {/* Chat Button */}
+      {/* Chat Button with notification badge + pulse */}
       <button
         onClick={() => setIsOpen(true)}
         className={`fixed bottom-6 right-6 z-50 bg-gradient-gold text-primary-foreground p-4 rounded-full shadow-glow hover:scale-110 transition-transform ${
           isOpen ? "hidden" : "flex"
-        } items-center gap-2 animate-bounce-gentle`}
+        } items-center gap-2`}
         aria-label="Open chat"
       >
-        <MessageCircle className="w-6 h-6" />
+        <div className="relative animate-bounce-gentle">
+          <MessageCircle className="w-6 h-6" />
+          {/* Notification badge */}
+          <span className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+            1
+          </span>
+        </div>
         <span className="hidden sm:inline font-semibold pr-2">Chat with {site.businessName}</span>
+        {/* Pulse ring */}
+        <span className="absolute inset-0 rounded-full bg-secondary/30 animate-ping pointer-events-none" />
       </button>
 
       {/* Chat Window */}
@@ -114,7 +133,7 @@ const ChatWidget = () => {
               </Button>
             </form>
             <p className="text-xs text-muted-foreground text-center mt-2">
-              Powered by AI • Get a free quote today!
+              Powered by AI &bull; Get a free quote today!
             </p>
           </div>
         </div>

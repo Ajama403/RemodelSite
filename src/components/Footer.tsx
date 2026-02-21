@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <img
-                src="/michails_logo_top_right.png"
+                src={site.logo}
                 alt={`${site.businessName} logo`}
                 className="w-14 h-14 object-contain"
               />
@@ -21,21 +21,21 @@ const Footer = () => {
             </div>
             <p className="text-primary-foreground/70 mb-6 leading-relaxed">
               {site.about.headline} Based in {site.baseCity}, serving {site.serviceAreas.slice(0, 3).join(", ")} and
-              beyond with dependable handyman help.
+              beyond with dependable {site.trade} help.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
+              {[
+                { url: site.social.facebook, Icon: Facebook },
+                { url: site.social.instagram, Icon: Instagram },
+                { url: site.social.youtube, Icon: Youtube },
+                { url: site.social.linkedin, Icon: Linkedin },
+              ]
+                .filter((s) => s.url)
+                .map(({ url, Icon }) => (
+                  <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+                    <Icon className="w-5 h-5" />
+                  </a>
+                ))}
             </div>
           </div>
 
@@ -43,9 +43,9 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              {["Home", "Services", "Process", "Gallery", "Reviews", "Contact"].map((link) => (
+              {["Home", "Services", "Process", "Gallery", "Reviews", "FAQ", "Contact"].map((link) => (
                 <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(" ", "-")}`} className="text-primary-foreground/70 hover:text-secondary transition-colors">
+                  <a href={`#${link.toLowerCase()}`} className="text-primary-foreground/70 hover:text-secondary transition-colors">
                     {link}
                   </a>
                 </li>
@@ -55,7 +55,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Handyman Services</h4>
+            <h4 className="font-bold text-lg mb-6">{site.category} Services</h4>
             <ul className="space-y-3">
               {site.services.map((service) => (
                 <li key={service.title}>
@@ -74,20 +74,20 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-secondary mt-1" />
                 <div>
-                  <a href={`tel:${site.phoneTel}`} className="block text-primary-foreground hover:text-secondary transition-colors">
+                  <a href={`tel:${site.phoneTel}`} className="block text-primary-foreground hover:text-secondary transition-colors font-semibold text-lg">
                     {site.phoneDisplay}
                   </a>
-                  <span className="text-sm text-primary-foreground/50">Call/Text • {site.hours}</span>
+                  <span className="text-sm text-primary-foreground/50">Call/Text &bull; {site.hours}</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-secondary mt-1" />
-                <span className="text-primary-foreground/70">info@michailshandyman.com</span>
+                <span className="text-primary-foreground/70">{site.email}</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary mt-1" />
                 <span className="text-primary-foreground/70">
-                  {site.baseCity} • Serving {site.serviceAreas.slice(1).join(", ")}
+                  {site.baseCity} &bull; Serving {site.serviceAreas.slice(1).join(", ")}
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -108,7 +108,7 @@ const Footer = () => {
             Serving {site.serviceAreas.join(", ")}
           </p>
           <p className="text-primary-foreground/50 text-sm">
-            © {new Date().getFullYear()} {site.businessName}. {site.baseCity} • {site.phoneDisplay} • {site.accreditationLabel}
+            &copy; {new Date().getFullYear()} {site.businessName}. {site.baseCity} &bull; {site.phoneDisplay} &bull; {site.accreditationLabel}
           </p>
         </div>
       </div>

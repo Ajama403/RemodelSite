@@ -5,9 +5,9 @@ import site from "@/content/siteConfig";
 const About = () => {
   const stats = [
     { icon: Award, value: site.accreditationLabel, label: "BBB Accredited" },
-    { icon: Users, value: "Fast Response", label: "Call/Text Anytime" },
+    { icon: Users, value: site.stats[0].value, label: site.stats[0].label },
     { icon: Clock, value: site.hours, label: "Availability" },
-    { icon: ShieldCheck, value: "Respectful Work", label: "Clean, Reliable Service" },
+    { icon: ShieldCheck, value: site.stats[3].value, label: site.stats[3].label },
   ];
 
   return (
@@ -18,13 +18,13 @@ const About = () => {
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               <img
-                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
-                alt="Handyman working on home improvement in Ridgecrest CA"
+                src={site.about.images[0]}
+                alt={`Home improvement project in ${site.baseCity}`}
                 className="rounded-2xl shadow-card h-64 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?auto=format&fit=crop&w=800&q=80"
-                alt="Flooring installation project in Ridgecrest"
+                src={site.about.images[1]}
+                alt={`Flooring installation in ${site.baseCity}`}
                 className="rounded-2xl shadow-card h-64 object-cover mt-8"
               />
             </div>
@@ -48,16 +48,16 @@ const About = () => {
               <span className="text-secondary font-semibold uppercase tracking-wider text-sm">About Us</span>
               <div className="h-1 w-12 bg-gradient-gold rounded mt-2" />
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
               Why Homeowners Trust
               <span className="text-gradient"> {site.businessName}</span>
             </h2>
-            
+
             <p className="text-muted-foreground text-lg leading-relaxed">
               {site.about.headline}
             </p>
-            
+
             <p className="text-muted-foreground leading-relaxed">
               {site.about.body[0]} {site.about.body[1]}
             </p>
@@ -65,7 +65,7 @@ const About = () => {
             <p className="text-muted-foreground leading-relaxed">{site.about.body[2]}</p>
 
             <div className="p-4 bg-muted rounded-xl text-sm text-foreground">
-              Serving {site.serviceAreas[0]} + {site.serviceAreas.slice(1).join(", ")} • {site.category} • {site.hours}
+              Serving {site.serviceAreas[0]} + {site.serviceAreas.slice(1).join(", ")} &bull; {site.category} &bull; {site.hours}
             </div>
 
             <ul className="grid sm:grid-cols-2 gap-3">

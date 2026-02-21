@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: "Process", href: "#process" },
     { name: "Gallery", href: "#gallery" },
     { name: "Reviews", href: "#reviews" },
+    { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -22,14 +23,14 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
             <img
-              src="/michails_logo_top_right.png"
+              src={site.logo}
               alt={`${site.businessName} logo`}
               className="w-14 h-14 object-contain"
             />
             <div className="hidden sm:block">
               <span className="font-bold text-xl text-foreground">{site.businessName}</span>
               <span className="block text-xs text-muted-foreground -mt-1">
-                {site.category} • {site.baseCity}
+                {site.category} &bull; {site.baseCity}
               </span>
             </div>
           </a>
@@ -47,11 +48,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - Phone always prominent */}
           <div className="hidden lg:flex items-center gap-3">
             <Button
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className="bg-gradient-gold text-primary-foreground hover:opacity-90 font-semibold"
               asChild
             >
               <a href={`tel:${site.phoneTel}`} className="flex items-center gap-2">
@@ -59,19 +59,28 @@ const Navbar = () => {
                 {site.phoneDisplay}
               </a>
             </Button>
-            <Button className="bg-gradient-gold text-primary-foreground hover:opacity-90 font-semibold" asChild>
-              <a href="#contact">Request a Quote</a>
+            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
+              <a href="#contact">Free Quote</a>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile: Phone + Menu */}
+          <div className="lg:hidden flex items-center gap-2">
+            <a
+              href={`tel:${site.phoneTel}`}
+              className="flex items-center gap-1 bg-gradient-gold text-primary-foreground px-3 py-2 rounded-lg font-semibold text-sm"
+            >
+              <Phone className="w-4 h-4" />
+              <span className="hidden xs:inline">Call</span>
+            </a>
+            <button
+              className="p-2"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -89,13 +98,13 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <Button variant="outline" className="w-full" asChild>
+                <Button className="w-full bg-gradient-gold text-primary-foreground" asChild>
                   <a href={`tel:${site.phoneTel}`} className="flex items-center justify-center gap-2">
                     <Phone className="w-4 h-4" />
                     {site.phoneDisplay}
                   </a>
                 </Button>
-                <Button className="w-full bg-gradient-gold text-primary-foreground" asChild>
+                <Button variant="outline" className="w-full" asChild>
                   <a href="#contact">Request a Quote</a>
                 </Button>
               </div>

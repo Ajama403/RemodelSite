@@ -2,38 +2,7 @@ import { Button } from "@/components/ui/button";
 import site from "@/content/siteConfig";
 
 const Gallery = () => {
-  const projects = [
-    {
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80",
-      title: "Flooring Install for Busy Family",
-      category: "Flooring",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80",
-      title: "Bathroom Refresh & Fixtures",
-      category: "Remodel Help",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-      title: "Kitchen Updates & Backsplash",
-      category: "Home Improvement",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80",
-      title: "Rental Ready Touch-Ups",
-      category: "Repairs",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=800&q=80",
-      title: "Trim & Finish Carpentry",
-      category: "Handyman",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
-      title: "Fixture Swaps & Lighting",
-      category: "Electrical",
-    },
-  ];
+  const projects = site.gallery;
 
   return (
     <section id="gallery" className="py-24 bg-muted/30">
@@ -42,7 +11,7 @@ const Gallery = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary font-semibold uppercase tracking-wider text-sm">Our Work</span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-            Recent Projects &
+            Recent Projects &amp;
             <span className="text-gradient"> Clean Installs</span>
           </h2>
           <p className="text-muted-foreground text-lg">

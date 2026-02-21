@@ -1,30 +1,260 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+  "businessName": "Michail's Handyman",
+  "businessSlug": "michails-handyman-ridgecrest",
+  "trade": "handyman",
+  "phone": "+16614189197",
+  "phoneDisplay": "(661) 418-9197",
+  "email": "info@michailshandyman.com",
+  "address": "723 N China Lake Blvd C2",
+  "city": "Ridgecrest",
+  "state": "CA",
+  "zip": "93555",
+  "logoUrl": "/michails_logo_top_right.png",
+  "logoAlt": "Michail's Handyman logo",
+  "heroImage": "/hero-kitchen-remodel.jpg",
+  "bbbLogoUrl": "/BBB%20logo.png",
+  "primaryColor": "#1e2a38",
+  "secondaryColor": "#e8a308",
+  "heroHeadline": "Handyman & Home Improvement Services in Ridgecrest, CA",
+  "heroSubheadline": "Flooring installs, remodel help, plumbing fixes, and electrical swaps — clean, reliable work for busy homeowners.",
+  "heroCta": "Get Your Free Quote",
+  "googleRating": "5.0",
+  "reviewCount": "32",
+  "yearFounded": "2022",
+  "licenseNumber": "",
+  "accreditationLabel": "BBB Accredited Business",
+  "category": "Home Improvement",
+  "hours": "Fast response times",
+  "url": "https://www.michailshandyman.com",
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
+  "stats": [
+    { "value": "500+", "label": "Projects Completed" },
+    { "value": "5.0", "label": "Google Rating" },
+    { "value": "32+", "label": "5-Star Reviews" },
+    { "value": "Same Day", "label": "Response Time" }
+  ],
 
-    /* Linting */
-    "strict": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitAny": false,
-    "noFallthroughCasesInSwitch": false,
-
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
+  "services": [
+    {
+      "title": "Flooring Installation",
+      "desc": "Clean installs for vinyl, laminate, and more. Done right the first time.",
+      "image": "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "Home Remodels",
+      "desc": "Small-to-mid remodel help to refresh kitchens, bathrooms, and living spaces.",
+      "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "Plumbing Help",
+      "desc": "Fixture installs and common repairs to keep your home running smoothly.",
+      "image": "https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "Electrical Help",
+      "desc": "Basic electrical installs and swaps for safer, cleaner setups.",
+      "image": "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "General Handyman Repairs",
+      "desc": "Fixes, installs, and punch-list work for homeowners and rentals.",
+      "image": "https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "Tile & Backsplash Installation",
+      "desc": "Precision tile and backsplash installs for kitchens and baths with clean lines.",
+      "image": "https://images.unsplash.com/photo-1523419400524-f0c6f1eb7828?auto=format&fit=crop&w=800&q=80"
     }
+  ],
+
+  "serviceAreas": ["Ridgecrest, CA", "Palmdale, CA", "Lancaster, CA", "Santa Clarita, CA"],
+  "serviceNeighborhoods": [
+    "China Lake",
+    "Heritage Village",
+    "Pinney",
+    "Las Palmas",
+    "Gateway",
+    "College Heights",
+    "Inyokern",
+    "Tehachapi",
+    "Rosamond",
+    "California City",
+    "Quartz Hill",
+    "Acton"
+  ],
+
+  "about": {
+    "headline": "Local. Reliable. Built for busy homeowners.",
+    "body": [
+      "Michail's Handyman helps homeowners in Ridgecrest and nearby cities get projects done without the headache.",
+      "From flooring installs to remodel help, plus plumbing and electrical fixes — you'll get clear communication, clean work, and a job done right.",
+      "BBB accredited. Call or text anytime."
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1556909114-44e3e70034e2?auto=format&fit=crop&w=800&q=80"
+    ]
   },
-  "include": ["src"]
+
+  "trust": [
+    "BBB Accredited Business",
+    "Serving Ridgecrest + Palmdale, Lancaster, Santa Clarita",
+    "Fast response by call/text",
+    "Clean, respectful work in your home"
+  ],
+
+  "howItWorks": [
+    { "title": "Call or Text", "desc": "Tell us what you need and where you're located." },
+    { "title": "Quick Plan", "desc": "We confirm scope, timeline, and the next step." },
+    { "title": "Get It Done", "desc": "We show up, do clean work, and keep you updated." }
+  ],
+
+  "gallery": [
+    {
+      "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80",
+      "title": "Flooring Install for Busy Family",
+      "category": "Flooring"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80",
+      "title": "Bathroom Refresh & Fixtures",
+      "category": "Remodel Help"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "title": "Kitchen Updates & Backsplash",
+      "category": "Home Improvement"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80",
+      "title": "Rental Ready Touch-Ups",
+      "category": "Repairs"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=800&q=80",
+      "title": "Trim & Finish Carpentry",
+      "category": "Handyman"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+      "title": "Fixture Swaps & Lighting",
+      "category": "Electrical"
+    }
+  ],
+
+  "testimonials": [
+    {
+      "name": "Sarah Thompson",
+      "location": "Ridgecrest, CA",
+      "rating": 5,
+      "text": "Called late evening for a leaking faucet and Michail had it fixed the next morning. Clear communication and no mess left behind.",
+      "project": "Plumbing Help"
+    },
+    {
+      "name": "Michael Chen",
+      "location": "Palmdale, CA",
+      "rating": 5,
+      "text": "We needed flooring installed fast before moving in. He handled the vinyl plank install cleanly and walked us through every step.",
+      "project": "Flooring Installation"
+    },
+    {
+      "name": "Jennifer Martinez",
+      "location": "Lancaster, CA",
+      "rating": 5,
+      "text": "Great handyman for our rental punch list — outlets swapped, trim repaired, and a bathroom fan replaced. Responsive and reliable.",
+      "project": "Handyman Repairs"
+    },
+    {
+      "name": "David Russo",
+      "location": "Ridgecrest, CA",
+      "rating": 5,
+      "text": "Michail did our kitchen backsplash and it looks incredible. Showed up on time, finished ahead of schedule, and cleaned up everything.",
+      "project": "Tile & Backsplash"
+    },
+    {
+      "name": "Linda Nguyen",
+      "location": "Santa Clarita, CA",
+      "rating": 5,
+      "text": "Had three light fixtures and a ceiling fan installed in one visit. Professional work, fair price, and he even fixed a wobbly outlet cover for free.",
+      "project": "Electrical Help"
+    },
+    {
+      "name": "Robert Caldwell",
+      "location": "Palmdale, CA",
+      "rating": 5,
+      "text": "Bathroom remodel went smooth from start to finish. New vanity, toilet, and tile floor — all done in two days. Highly recommend.",
+      "project": "Home Remodel"
+    }
+  ],
+
+  "faq": [
+    {
+      "question": "What areas do you serve?",
+      "answer": "We serve Ridgecrest, Palmdale, Lancaster, Santa Clarita, and surrounding communities including China Lake, Inyokern, Tehachapi, Rosamond, California City, and more."
+    },
+    {
+      "question": "Do I need to be home during the work?",
+      "answer": "We prefer you to be home at the start so we can walk through the project together. After that, many homeowners leave us to work while they go about their day."
+    },
+    {
+      "question": "How fast can you start?",
+      "answer": "Most projects can be scheduled within a few days. For urgent repairs, we often offer same-day or next-day availability — just call or text."
+    },
+    {
+      "question": "Do you provide free estimates?",
+      "answer": "Yes. Call or text us with details about your project and we will give you a clear, honest estimate before any work begins."
+    },
+    {
+      "question": "Are you licensed and insured?",
+      "answer": "Yes. We are a BBB Accredited Business and carry full insurance for your protection and peace of mind."
+    },
+    {
+      "question": "What types of projects are too big or too small?",
+      "answer": "No project is too small — we handle everything from hanging a shelf to full bathroom remodels. If a project is outside our scope, we will tell you upfront and refer you to someone who can help."
+    },
+    {
+      "question": "How do I pay?",
+      "answer": "We accept cash, check, Venmo, and Zelle. Payment is due upon completion of the work unless we agree to a different arrangement for larger projects."
+    },
+    {
+      "question": "Do you clean up after the job?",
+      "answer": "Always. We treat your home with respect and leave the work area cleaner than we found it. That is our standard on every job."
+    }
+  ],
+
+  "contact": {
+    "headline": "Need help with a home project?",
+    "sub": "Call or text now — we'll tell you the fastest next step.",
+    "button": "Call/Text (661) 418-9197"
+  },
+
+  "social": {
+    "facebook": "https://www.facebook.com/p/Michails-Handyman-LLC-61551592900257/",
+    "instagram": "",
+    "youtube": "",
+    "linkedin": "",
+    "twitter": ""
+  },
+
+  "schema": {
+    "type": "HomeAndConstructionBusiness",
+    "priceRange": "$$"
+  },
+
+  "seo": {
+    "siteTitle": "Michail's Handyman | Handyman & Home Improvement in Ridgecrest, CA",
+    "metaDescription": "Michail's Handyman provides flooring installation, remodel help, plumbing and electrical services in Ridgecrest, CA and nearby areas (Palmdale, Lancaster, Santa Clarita). Call/Text (661) 418-9197.",
+    "ogImage": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=2000&q=80",
+    "keywords": [
+      "handyman Ridgecrest CA",
+      "home improvement Ridgecrest",
+      "flooring installation Ridgecrest CA",
+      "remodeling Ridgecrest CA",
+      "plumbing Ridgecrest handyman",
+      "electrical Ridgecrest handyman",
+      "Palmdale handyman",
+      "Lancaster handyman",
+      "Santa Clarita handyman"
+    ]
+  }
 }

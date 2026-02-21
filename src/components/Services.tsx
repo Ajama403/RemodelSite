@@ -4,19 +4,10 @@ import site from "@/content/siteConfig";
 
 const Services = () => {
   const serviceIcons = [Ruler, Paintbrush, Wrench, Lightbulb, Hammer];
-  const serviceImages = [
-    "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1523419400524-f0c6f1eb7828?auto=format&fit=crop&w=800&q=80",
-  ];
   const services = site.services.map((service, index) => ({
     ...service,
     description: service.desc,
     icon: serviceIcons[index % serviceIcons.length],
-    image: serviceImages[index % serviceImages.length],
   }));
 
   return (
@@ -26,11 +17,11 @@ const Services = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary font-semibold uppercase tracking-wider text-sm">Our Services</span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-            Handyman & Home Improvement Services
+            {site.category} Services
             <span className="text-gradient"> in {site.baseCity}</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Flooring installs, remodel help, plumbing and electrical fixes, plus general repairs for busy homeowners.
+            {site.heroSubheadline}{" "}
             Call or text for quick help in {site.serviceAreas[0]} and nearby.
           </p>
         </div>

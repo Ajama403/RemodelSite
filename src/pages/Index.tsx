@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import StatsBar from "@/components/StatsBar";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Gallery from "@/components/Gallery";
 import Reviews from "@/components/Reviews";
+import FAQ from "@/components/FAQ";
+import ServiceAreas from "@/components/ServiceAreas";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import site from "@/content/siteConfig";
@@ -17,7 +20,7 @@ const Index = () => {
     "@type": "HomeAndConstructionBusiness",
     name: site.businessName,
     description: site.seo.metaDescription,
-    url: "https://www.michailshandyman.com",
+    url: site.url,
     telephone: site.phoneTel,
     areaServed: site.serviceAreas,
     address: {
@@ -60,8 +63,12 @@ const Index = () => {
 
     const ogTitle = document.querySelector('meta[property="og:title"]');
     const ogDescription = document.querySelector('meta[property="og:description"]');
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    const twitterImage = document.querySelector('meta[name="twitter:image"]');
     if (ogTitle) ogTitle.setAttribute("content", site.seo.siteTitle);
     if (ogDescription) ogDescription.setAttribute("content", site.seo.metaDescription);
+    if (ogImage) ogImage.setAttribute("content", site.seo.ogImage);
+    if (twitterImage) twitterImage.setAttribute("content", site.seo.ogImage);
   }, []);
 
   return (
@@ -70,11 +77,14 @@ const Index = () => {
       <main className="min-h-screen">
         <Navbar />
         <Hero />
+        <StatsBar />
         <About />
         <Services />
         <Process />
         <Gallery />
         <Reviews />
+        <FAQ />
+        <ServiceAreas />
         <Footer />
         <ChatWidget />
       </main>

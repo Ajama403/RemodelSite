@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Star, ArrowRight } from "lucide-react";
+import { Star, ArrowRight, Phone } from "lucide-react";
 import site from "@/content/siteConfig";
 
 const Hero = () => {
@@ -11,7 +11,7 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/Michail%27s%20Handyman%20HERO%20.jpg')" }}
+        style={{ backgroundImage: `url('${site.heroImage}')` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/40" />
       </div>
@@ -22,16 +22,15 @@ const Hero = () => {
           <div className="text-primary-foreground space-y-8 animate-fade-up">
             <div className="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm px-4 py-2 rounded-full">
               <Star className="w-4 h-4 text-secondary fill-secondary" />
-              <span className="text-sm font-medium">Served hundreds of homes • {site.hours}</span>
+              <span className="text-sm font-medium">{site.accreditationLabel} &bull; {site.hours}</span>
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
-              Handyman & Home Improvement in {site.baseCity}
+              {site.heroHeadline}
             </h1>
 
             <p className="text-lg text-primary-foreground/80 max-w-2xl">
-              {site.tagline} Michail&apos;s Handyman handles flooring installs, remodel help, plumbing fixes, and
-              electrical swaps with clean, reliable work.
+              {site.heroSubheadline}
             </p>
 
             <p className="text-primary-foreground/80 max-w-2xl">
@@ -47,7 +46,8 @@ const Hero = () => {
                 asChild
               >
                 <a href={`tel:${site.phoneTel}`} className="flex items-center">
-                  {site.primaryCtaLabel}
+                  <Phone className="w-5 h-5 mr-2" />
+                  {site.heroCta} &mdash; {site.phoneDisplay}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </a>
               </Button>
@@ -66,7 +66,7 @@ const Hero = () => {
               <div className="flex items-center gap-3 bg-primary-foreground/10 backdrop-blur-sm px-4 py-3 rounded-lg">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png"
-                  alt="Google reviews for Michail's Handyman"
+                  alt="Google reviews"
                   className="w-8 h-8"
                 />
                 <div>
@@ -75,20 +75,20 @@ const Hero = () => {
                       <Star key={i} className="w-4 h-4 text-secondary fill-secondary" />
                     ))}
                   </div>
-                  <span className="text-xs text-primary-foreground/70">Fast, friendly service</span>
+                  <span className="text-xs text-primary-foreground/70">{site.stats[2].value} Reviews</span>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-primary-foreground/10 backdrop-blur-sm px-4 py-3 rounded-lg">
                 <div className="w-10 h-10 bg-white rounded flex items-center justify-center">
                   <img
-                    src="/BBB%20logo.png"
-                    alt="BBB Accredited Business"
+                    src={site.bbbLogoUrl}
+                    alt={site.accreditationLabel}
                     className="w-9 h-9 object-contain"
                   />
                 </div>
                 <div>
                   <span className="text-sm font-semibold block">{site.accreditationLabel}</span>
-                  <span className="text-xs text-primary-foreground/70">Better Business Bureau</span>
+                  <span className="text-xs text-primary-foreground/70">{site.accreditationLabel}</span>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ const Hero = () => {
                   className="w-full bg-gradient-gold text-primary-foreground hover:opacity-90 font-semibold h-12 text-base"
                   asChild
                 >
-                  <a href={`tel:${site.phoneTel}`}>Call/Text Now</a>
+                  <a href={`tel:${site.phoneTel}`}>{site.heroCta}</a>
                 </Button>
               </form>
             </div>
